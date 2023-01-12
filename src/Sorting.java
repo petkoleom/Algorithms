@@ -68,6 +68,10 @@ public class Sorting {
 
     //#region - QuickSort - 
 
+    void quickSort() {
+
+    }
+
     //#endregion
 
 }
