@@ -1,12 +1,6 @@
-import java.util.Arrays;
+package Sorting;
 
-public class Sorting {
-    public static void main(String[] args) {
-        int[] A = { 4, 3, 7, 6, 9, 8, 2, 1, 5, 0 };
-        System.out.println(Arrays.toString(mergeSort(A)));
-    }
-    //#region - MergeSort - 
-
+public class MergeSort {
     static int[] mergeSort(int[] A) {
         if (A.length == 1)
             return A;
@@ -22,14 +16,10 @@ public class Sorting {
             }
         }
 
-        System.out.println(Arrays.toString(arr1));
-        System.out.println(Arrays.toString(arr2));
-
         arr1 = mergeSort(arr1);
         arr2 = mergeSort(arr2);
 
         return merge(arr1, arr2);
-
     }
 
     static int[] merge(int[] A, int[] B) {
@@ -63,15 +53,4 @@ public class Sorting {
 
         return C;
     }
-
-    //#endregion
-
-    //#region - QuickSort - 
-
-    void quickSort() {
-
-    }
-
-    //#endregion
-
 }
