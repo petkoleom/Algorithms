@@ -10,14 +10,13 @@ public class Dijkstra{
         for (int i = 0; i < distances.length; i++) {
             distances[i] = Integer.MAX_VALUE;
         }
-
         queue.add(new Tuple(v, 0));
         distances[v] = 0;
 
         while(!queue.isEmpty()){
             int cur = queue.poll().vertex;
             for (int i = 0; i < V; i++) {
-                if(mat[cur][i] == 0) continue;
+                if(mat[cur][i] == Integer.MAX_VALUE) continue;
                 int w = mat[cur][i];
                 int newDist = distances[cur] + w;
                 if(newDist < distances[i]){
@@ -26,9 +25,7 @@ public class Dijkstra{
                 }
             }
         }
-
-        System.out.println(Arrays.toString(distances));
-
+        _Graphs.printArray(distances);
     }
 
     static class Tuple implements Comparable<Tuple>{

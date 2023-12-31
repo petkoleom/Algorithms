@@ -12,7 +12,7 @@ public class BFS {
             v = queue.poll();
             System.out.print(v + " ");
             for (int i = 0; i < V; i++) {
-                if(mat[v][i] == 0) continue;
+                if(mat[v][i] == Integer.MAX_VALUE) continue;
                 if (!visited[i]) {
                     visited[i] = true;
                     queue.add(i);

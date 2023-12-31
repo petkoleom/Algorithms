@@ -7,7 +7,7 @@ public class DFS {
         visited[v] = true;
         System.out.print(v + " ");
         for (int i = 0; i < V; i++) {
-            if(mat[v][i] == 0) continue;
+            if(mat[v][i] == Integer.MAX_VALUE) continue;
             if (!visited[i]) 
                 dfsRecursive(mat, i, V, visited);
         }
@@ -22,7 +22,7 @@ public class DFS {
                 visited[cur] = true;
                 System.out.print(cur + " ");
                 for (int i = 0; i < V; i++) {
-                    if(mat[cur][i] == 0) continue;
+                    if(mat[cur][i] == Integer.MAX_VALUE) continue;
                     if(!visited[i])
                         stack.push(i);
                 }
