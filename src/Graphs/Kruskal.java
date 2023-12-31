@@ -37,6 +37,19 @@ public class Kruskal {
         System.out.println(mst);
     }
 
+    static int find(int[] subsets, int i){
+        System.out.println(i);
+        if(subsets[i] == -1)
+            return i;
+        return find(subsets, subsets[i]);
+    }
+
+    static void union(int[]subsets, int x, int y){
+        int rootX = find(subsets, x);
+        int rootY = find(subsets, y);
+        subsets[rootX] = rootY;
+    }
+
     static class Edge implements Comparable<Edge>{
         int source;
         int target;
@@ -52,18 +65,5 @@ public class Kruskal {
         public String toString(){
             return source + " -> " + target + ", " + weight;
         }
-    }
-
-    static int find(int[] subsets, int i){
-        System.out.println(i);
-        if(subsets[i] == -1)
-            return i;
-        return find(subsets, subsets[i]);
-    }
-
-    static void union(int[]subsets, int x, int y){
-        int rootX = find(subsets, x);
-        int rootY = find(subsets, y);
-        subsets[rootX] = rootY;
     }
 }
