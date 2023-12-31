@@ -1,10 +1,9 @@
 package Graphs;
-
 import java.util.*;
 
 public class BFS {
 
-    static void bfs(LinkedList<Integer> adj[], int v, int V) {
+    static void bfs(int[][] mat, int v, int V) {
         boolean[] visited = new boolean[V];
         LinkedList<Integer> queue = new LinkedList<>();
         queue.add(v);
@@ -12,12 +11,11 @@ public class BFS {
         while (!queue.isEmpty()) {
             v = queue.poll();
             System.out.print(v + " ");
-            for (Integer n : adj[v]) {
-                if (!visited[n]) {
-
-                    visited[n] = true;
-                    queue.add(n);
-
+            for (int i = 0; i < V; i++) {
+                if(mat[v][i] == 0) continue;
+                if (!visited[i]) {
+                    visited[i] = true;
+                    queue.add(i);
                 }
             }
         }
